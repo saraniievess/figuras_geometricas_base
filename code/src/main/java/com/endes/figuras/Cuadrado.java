@@ -10,8 +10,8 @@ package com.endes.figuras;
  */
 
 public class Cuadrado extends FiguraGeometrica {
-	int esquina;
-	double lado;
+	private Punto esquina;
+	private double lado;
 	
 	/**
 	 * Constructor de la clase Cuadrado.
@@ -19,10 +19,10 @@ public class Cuadrado extends FiguraGeometrica {
 	 * @param nombre el nombre del cuadrado
 	 * @param color el color del cuadrado
 	 * @param lado la longitud del lado del cuadrado
-	 * @param esquina la esquina del cuadrado (0 a 3)
+	 * @param esquina la esquina del cuadrado
 	 */
 	
-	public Cuadrado(String nombre, String color, double lado, int esquina) {
+	public Cuadrado(String nombre, String color, double lado, Punto esquina) {
 		super(nombre, color);
 		this.lado=lado;
 		this.esquina=esquina;
@@ -52,12 +52,17 @@ public class Cuadrado extends FiguraGeometrica {
 	 * @param angulo el ángulo de rotación en grados
 	 */
 	
-	public void rotar(double angulo) {
-		if (angulo%90==0) {
-			esquina=(esquina+(int)(angulo/90))%4;
-		} else {
-			System.out.println("El ángulo de rotación debe ser un múltiplo de 90 grados.");
-		}
+	public void rotar(int angulo) {
+		double anguloRad = Math.toRadians(angulo);
+
+        double x = esquina.getX();
+        double y = esquina.getY();
+
+        double xNuevo = x * Math.cos(anguloRad) - y * Math.sin(anguloRad);
+        double yNuevo = x * Math.sin(anguloRad) + y * Math.cos(anguloRad);
+
+        esquina.setX(xNuevo);
+        esquina.setY(yNuevo);
 	}
 	
 	/**
@@ -69,6 +74,8 @@ public class Cuadrado extends FiguraGeometrica {
 	
 	public void trasladar(double dx, double dy) {
 		System.out.println("Trasladando el cuadrado " + getNombre() + " en (" + dx + ", " + dy + ").");
+		esquina.setX(dx);
+		esquina.setY(dy);
 	}
 	
 }
