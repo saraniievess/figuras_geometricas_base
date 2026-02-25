@@ -51,5 +51,18 @@ public class Punto {
 	public void setY(double y) {
 		this.y = y;
 	}
+	
+	/**
+	 * Calcula la distancia entre este punto y otro punto dado.
+	 * 
+	 * @param otro el otro punto con el que se desea calcular la distancia
+	 * @return la distancia entre los dos puntos
+	 */
+	
+	public double distancia(Punto otro) {
+		double dx = this.x - otro.x;
+		double dy = this.y - otro.y;
+		return Math.sqrt(dx * dx + dy * dy);
+	}
 
 }

@@ -10,7 +10,7 @@ package com.endes.figuras;
  */
 
 public class Cuadrado extends FiguraGeometrica {
-	private Punto esquina;
+	Punto esquina;
 	private double lado;
 	
 	/**
@@ -34,6 +34,7 @@ public class Cuadrado extends FiguraGeometrica {
 	
 	@Override
 	public double area() {
+		System.out.println("Calculando el área del cuadrado " + getNombre() + ": " + lado*lado);
 		return lado*lado;
 	}
 
@@ -43,6 +44,7 @@ public class Cuadrado extends FiguraGeometrica {
 	
 	@Override
 	public double perimetro() {
+		System.out.println("Calculando el perímetro del cuadrado " + getNombre() + ": "+ lado*4);
 		return lado*4;
 	}
 
@@ -63,6 +65,7 @@ public class Cuadrado extends FiguraGeometrica {
 
         esquina.setX(xNuevo);
         esquina.setY(yNuevo);
+        System.out.println("Rotando el cuadrado " + getNombre() + " en " + angulo + " grados. Nueva posición de la esquina: (" + xNuevo + ", " + yNuevo + ").");
 	}
 	
 	/**
