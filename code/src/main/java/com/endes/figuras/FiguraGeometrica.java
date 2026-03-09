@@ -1,6 +1,6 @@
 package com.endes.figuras;
 
-package com.endes.figuras;
+
 
 /**
  * Clase abstracta que representa una figura geométrica genérica.
