@@ -1,5 +1,6 @@
 package com.endes.figuras;
 
+
 /**
  * Clase abstracta que representa una figura geométrica genérica.
  * Todas las figuras geométricas deben extender esta clase e implementar
@@ -7,15 +8,17 @@ package com.endes.figuras;
  * 
  * Implementa {@link Comparable} para proporcionar un orden natural basado en el área.
  * 
+ * @author Daniela López
  * @author Sara Nieves
  * @version 1.0
  * @since 1.8 
  */
 public abstract class FiguraGeometrica implements Comparable<FiguraGeometrica> {
     /**
-     * Nombre de la figura geométrica.
+     * Triángulo.
      */
     protected String nombre;
+
 
     /**
      * Color de la figura geométrica.
@@ -58,7 +61,7 @@ public abstract class FiguraGeometrica implements Comparable<FiguraGeometrica> {
      * @return el área de la figura
      */
     public abstract double area();
-
+    
     /**
      * Calcula el perímetro de la figura geométrica.
      * Este método debe ser implementado por las clases concretas.
